@@ -6,7 +6,7 @@
 package program;
 
 import Output.InterpretingConsoleRecordsink;
-import Gpio.GpioStateReader;
+import GpioAccess.GpioStateReader;
 import gpio.ControlerFactory;
 import oszyloskop.IStateReader;
 import oszyloskop.LogicOszyloscop;
