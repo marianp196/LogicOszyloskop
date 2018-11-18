@@ -16,7 +16,7 @@ import oszyloskop.IRecordSink;
 public class InterpretingConsoleRecordsink implements IRecordSink{
 
     @Override
-    public void record(long timestamp, boolean state) {
+    public void record(long timestamp, boolean state) {        
         if(_lastTimestamp == null)
         {
             log("--startRecord-- " + timestamp + "  " + state);

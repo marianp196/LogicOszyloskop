@@ -5,6 +5,7 @@
  */
 package GpioAccess;
 
+import gpio.Enums.EModus;
 import gpio.Interfaces.IControler;
 import oszyloskop.IStateReader;
 
@@ -14,9 +15,10 @@ import oszyloskop.IStateReader;
  */
 public class GpioStateReader implements IStateReader {
 
-    public GpioStateReader(IControler controler, int pin){
+    public GpioStateReader(IControler controler, int pin) throws Exception{
         _controler = controler;
         _pin = pin;
+        _controler.register(pin, EModus.In);
     }
     
     @Override

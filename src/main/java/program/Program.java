@@ -20,15 +20,16 @@ public class Program {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         int inputPin = 0;          
         try{
-           inputPin = getPinNumber(args);
+           inputPin = getPinNumber(args);           
         }catch(Exception e){
             System.out.println(e.getMessage());
             return;
         }        
         
+        System.out.println(inputPin);
         IStateReader stateReader = new GpioStateReader(ControlerFactory.getInstance(),
                                     inputPin);
                 
@@ -41,7 +42,7 @@ public class Program {
     
     
     private static int getPinNumber(String[] args) throws Exception{
-         if(args.length != 1){
+        if(args.length != 1){
             throw new Exception("Angeschlossener Pin nicht übergen");
         } 
          
